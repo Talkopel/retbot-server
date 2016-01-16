@@ -1,0 +1,40 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: consolas;
+    background:#000;
+    color: #00FF00;
+    margin:0;
+}
+canvas {
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.container {
+    background-color: rgba(0,0,0,0.9);
+    padding: 20px;
+    min-height: calc(100% - 64px);
+    width: 60% !important;
+}
+
+.output-console {
+    position:fixed;
+    overflow:hidden;
+    top: 64px;
+    right: 0px;
+    font-size: 10px;
+    background-color: rgba(0,0,0,0.6) !important;
+    width: 20%;
+}
+
+.bars-and-stuff {
+    width: 20%;
+    height: 100%;
+    opacity: 0.2;
+}

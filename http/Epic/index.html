@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <title>Magshimim Cyber Analysis Tool</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="materialize.min.css">
+  <link rel="stylesheet" href="basicModal.min.css">
+
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="materialize.min.js"></script>
+  <script src="basicmodal.js"></script>
+</head>
+<body>
+  <canvas id="matrix_effect" style='position: fixed; z-index: -1; opacity: 1'></canvas>
+  <canvas class='bars-and-stuff' ></canvas>
+  
+  <nav id="navbar" style='background-color: inherit'>
+    <div class="nav-wrapper" style='background-color:rgba(0,0,0,0.5)'>
+      <a class='brand-logo center'> <img src="/logo.png" style='width:220px;margin-top:-15px;'></a>
+    </div>
+  </nav>
+
+<div class='container'>
+  Magshimim Cyber Warfare Console. Running.</div>
+  <script>
+    var commands = [
+      "Monitoring Attacks",
+      "Calibrating Routes",
+      "Attempting to diagnose logs",
+      "Running exploit code",
+      "Running Cyber Warfare Protocol",
+      "Protocol 1337 for CyberSecurity running",
+      "Hacking darknet",
+      "Reverse engineering dataset 13",
+      "Patching encryption routine",
+      "Contacting Magshimim mainframe",
+      "Running G.I.B.E.L procedure - exploit processing items",
+      "WARNING - hacking too much cyber",
+      "Exploit putting on robe and wizard hat modules",
+      "Attempting to never give you up - security analyzer at 90% CPU",
+      "Scanning open ports for exploit",
+      "Scanning open ports for exploit, remembering life itself"
+    ];
+    var dupe = commands.filter(function(x) {
+      return x.indexOf("life itself") === -1; 
+    })
+    commands = commands.concat(dupe).concat(dupe);
+    function randomCommand(){
+      return commands.sort(function(x,y){ return Math.random() - 0.5 })[0];
+    }
+    var state = 0;
+    var c = document.querySelector(".container");
+    setTimeout(function foo() {
+
+      if(i > 50) {
+        i--;
+        var sliced = c.innerHTML.split("<br>");
+        sliced.shift();
+        c.innerHTML = sliced.join("<br>");
+      }
+      var artifact = 0, amplitude = 50;
+      if(window.danger) {
+        i++;
+        c.innerHTML += "<br>" +"DANGER - EXPLOIT DETECTED " + Math.random() + " " + Math.random() + " " + Math.random();
+      }else if(state == 0){ 
+        i++;
+        artifact = 50;
+        amplitude = 250;
+        var cmd = randomCommand();
+        c.innerHTML += "<br>" +cmd;
+        state = Math.floor(Math.random() * 5) + 2;
+        if(cmd.indexOf("life itself") > 0) state = 0;
+      } else {
+        state--;
+        c.innerHTML += ".";
+      }
+      setTimeout(foo, artifact + Math.random() * amplitude)
+    });
+  </script>
+  <div class="output-console"></div>
+  <canvas class='hacker-3d-shiz' style='display: none'></canvas>
+  
+
+  <script src='loktar.js'></script>
+  <script src='poll.js'></script>
+
+  <script src='matrix.js'></script>
+
+</body>
+</html>
